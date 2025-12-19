@@ -1,0 +1,500 @@
+{
+  "pays": "Biélorussie",
+  "drapeau": "🇧🇾",
+  "symbole": "🦬",
+  "titre": "L'Écho de l'Est: Aventure Biélorusse",
+  "budget_total": "4000€",
+  "duree": "17 jours",
+  "temps_vol": "environ 20h avec 2 escales depuis Regina (YQR), Canada",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée à Minsk et Premières Impressions",
+      "legende": "Après un long voyage, la capitale biélorusse vous accueille. Prenez le temps de vous installer et de faire une première immersion douce dans l'ambiance locale. Une balade tranquille vous permettra de vous familiariser avec les environs de votre hôtel et de sentir le pouls de la ville.",
+      "lieu": "Minsk",
+      "activites": [
+        "🛬 <strong>Arrivée à Minsk et transfert à l'hôtel</strong>: Après l'atterrissage à l'aéroport international de Minsk (MSQ), un transfert vers votre hôtel 3 étoiles vous attend pour une installation confortable.",
+        "🚶‍♂️ <strong>Balade légère dans le quartier de l'hôtel</strong>: Profitez de l'après-midi pour une promenade relaxante, découvrez les rues avoisinantes, repérez les commodités et imprégnez-vous de l'atmosphère locale sans précipitation."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "Visa",
+          "texte": "Les citoyens canadiens ont besoin d'un visa pour la Biélorussie. Assurez-vous de l'obtenir avant votre départ."
+        },
+        {
+          "symbole": "💱",
+          "titre": "Monnaie",
+          "texte": "La monnaie locale est le rouble biélorusse (BYN). Prévoyez de changer de l'argent ou d'utiliser des distributeurs automatiques."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🏛️",
+      "titre": "Minsk: Cœur Historique et Moderne",
+      "legende": "Plongez au cœur de Minsk, une ville qui a su se reconstruire avec panache après la Seconde Guerre mondiale. Explorez son centre historique restauré, admirez l'architecture stalinienne imposante et ressentez le mélange unique d'histoire et de modernité qui caractérise la capitale biélorusse.",
+      "lieu": "Minsk",
+      "activites": [
+        "⛪ <strong>Visite de la Vieille Ville (Troitskoye Predmestye)</strong>: Flânez dans le quartier pittoresque de la Trinité, avec ses maisons colorées du XIXe siècle, ses cafés charmants et ses galeries d'art, offrant un aperçu de l'ancienne Minsk.",
+        "🚶‍♀️ <strong>Découverte de l'Avenue de l'Indépendance</strong>: Parcourez cette artère majestueuse, emblématique de l'architecture stalinienne, bordée de bâtiments imposants et de places grandioses, témoignant de l'histoire soviétique de la ville.",
+        "⛪ <strong>Exploration de la Cathédrale Sainte-Marie</strong>: Admirez cette magnifique cathédrale catholique, un joyau architectural qui se dresse fièrement au cœur de la ville, offrant un contraste saisissant avec l'architecture environnante."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶",
+          "titre": "À pied",
+          "texte": "Le centre de Minsk est très agréable à explorer à pied. Prévoyez de bonnes chaussures de marche."
+        },
+        {
+          "symbole": "📸",
+          "titre": "Photographie",
+          "texte": "L'architecture stalinienne offre des perspectives uniques pour la photographie urbaine."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🖼️",
+      "titre": "Minsk: Art, Culture et Mémoire",
+      "legende": "Cette journée est dédiée à l'exploration de la richesse culturelle et mémorielle de Minsk. Des collections d'art nationales aux monuments commémoratifs poignants, la ville révèle ses multiples facettes. C'est une occasion de comprendre l'âme biélorusse à travers ses expressions artistiques et son histoire.",
+      "lieu": "Minsk",
+      "activites": [
+        "🖼️ <strong>Visite du Musée National d'Art de Biélorussie</strong>: Découvrez la plus grande collection d'art biélorusse, russe et européen, offrant un panorama complet de l'histoire artistique de la région.",
+        "🕊️ <strong>Mémorial de l'Île des Larmes</strong>: Rendez hommage aux soldats biélorusses tombés en Afghanistan sur cette île artificielle émouvante, un lieu de recueillement et de souvenir au milieu de la rivière Svislach.",
+        "🎭 <strong>Soirée à l'Opéra et Ballet National de Biélorussie</strong>: Si le programme le permet, assistez à une représentation dans ce magnifique théâtre, un haut lieu de la culture biélorusse, pour une expérience artistique mémorable."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🎟️",
+          "titre": "Billets",
+          "texte": "Réservez vos billets pour l'opéra à l'avance, surtout si vous voyagez pendant la haute saison."
+        },
+        {
+          "symbole": "🗣️",
+          "titre": "Langue",
+          "texte": "Le russe est la langue la plus parlée. Quelques notions de base peuvent être utiles, mais de nombreux jeunes parlent anglais."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🌳",
+      "titre": "Minsk: Détente et Nature Urbaine",
+      "legende": "Après les explorations culturelles, cette journée offre un moment de détente et de connexion avec la nature urbaine de Minsk. Profitez des vastes parcs verdoyants et des rives de la Svislach pour une pause ressourçante. C'est l'occasion de voir une autre facette de la vie quotidienne des habitants.",
+      "lieu": "Minsk",
+      "activites": [
+        "🌳 <strong>Promenade au Parc Gorky</strong>: Détendez-vous dans ce grand parc urbain, idéal pour une balade, une pause café ou même un tour de grande roue pour une vue panoramique sur la ville.",
+        "🛶 <strong>Balade le long de la rivière Svislach</strong>: Longez les berges aménagées de la rivière, un lieu prisé des habitants pour la marche, le vélo ou simplement pour profiter de l'air frais et des paysages verdoyants.",
+        "🛍️ <strong>Exploration du Komarovsky Market</strong>: Imprégnez-vous de l'ambiance locale dans ce marché couvert animé, où vous trouverez des produits frais, des spécialités biélorusses et une véritable immersion dans la vie quotidienne."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🍎",
+          "titre": "Gastronomie",
+          "texte": "Au marché Komarovsky, goûtez aux fruits de saison et aux produits locaux comme le \"draniki\" (galettes de pommes de terre)."
+        },
+        {
+          "symbole": "☀️",
+          "titre": "Météo",
+          "texte": "En été, les parcs sont parfaits pour échapper à la chaleur. En automne, les couleurs sont magnifiques."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🏰",
+      "titre": "Excursion: Châteaux de Mir et Nesvizh",
+      "legende": "Évadez-vous de la capitale pour une journée riche en histoire et en architecture. Découvrez deux des plus beaux châteaux de Biélorussie, classés au patrimoine mondial de l'UNESCO. Ces forteresses majestueuses racontent des siècles d'histoire et offrent un aperçu fascinant de la noblesse biélorusse.",
+      "lieu": "Mir et Nesvizh (depuis Minsk)",
+      "activites": [
+        "🏰 <strong>Visite du Château de Mir</strong>: Explorez ce château gothique du XVIe siècle, un exemple remarquable de l'architecture défensive, avec ses tours imposantes et son histoire mouvementée. Le site est classé à l'UNESCO.",
+        "👑 <strong>Découverte du Château de Nesvizh</strong>: Plongez dans l'élégance de cette ancienne résidence de la famille Radziwill, une magnifique forteresse-palais de style baroque, entourée de jardins paysagers et également classée à l'UNESCO."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "🚌",
+          "titre": "Transport",
+          "texte": "Il est recommandé de louer une voiture avec chauffeur ou de participer à une excursion organisée pour visiter ces deux sites en une journée."
+        },
+        {
+          "symbole": "⏳",
+          "titre": "Durée",
+          "texte": "Prévoyez une journée complète pour cette excursion, les trajets entre les sites et depuis Minsk prennent du temps."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🚆",
+      "titre": "Minsk à Brest: Voyage vers l'Ouest",
+      "legende": "Aujourd'hui, vous quittez la capitale pour vous diriger vers l'ouest du pays, à Brest. Ce voyage en train vous offre l'opportunité d'admirer les paysages biélorusses défiler. Une fois arrivé, prenez le temps de vous installer et de faire une première découverte de cette ville frontalière chargée d'histoire.",
+      "lieu": "Brest",
+      "activites": [
+        "🚆 <strong>Voyage en train de Minsk à Brest</strong>: Profitez d'un trajet confortable en train à travers la campagne biélorusse, une expérience authentique pour observer la vie locale et les paysages.",
+        "🚶‍♀️ <strong>Première balade dans le centre de Brest</strong>: Après l'installation à votre hôtel, explorez les rues principales de Brest, imprégnez-vous de son atmosphère et repérez les lieux d'intérêt pour les jours suivants."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "🎫",
+          "titre": "Billets de train",
+          "texte": "Achetez vos billets de train à l'avance, surtout pour les trajets interurbains populaires."
+        },
+        {
+          "symbole": "⏱️",
+          "titre": "Durée du trajet",
+          "texte": "Le trajet en train de Minsk à Brest dure environ 3 à 4 heures, selon le type de train."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🛡️",
+      "titre": "Brest: Forteresse et Histoire",
+      "legende": "Brest est une ville dont l'histoire est profondément marquée par les conflits et la résilience. Cette journée est consacrée à la découverte de sa célèbre forteresse, un symbole poignant de la résistance soviétique pendant la Seconde Guerre mondiale. C'est une expérience émouvante et éducative.",
+      "lieu": "Brest",
+      "activites": [
+        "🏰 <strong>Visite de la Forteresse de Brest</strong>: Explorez ce complexe mémorial colossal, un site historique majeur qui témoigne de la défense héroïque de la ville en 1941, avec ses monuments impressionnants et ses musées.",
+        "🕯️ <strong>Mémorial \"Courage\" et Musée de la Défense</strong>: Découvrez le cœur du mémorial, avec sa flamme éternelle et ses expositions détaillées sur les événements tragiques et la bravoure des défenseurs de la forteresse."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♂️",
+          "titre": "Prévoir du temps",
+          "texte": "Le site de la Forteresse de Brest est très vaste. Prévoyez au moins une demi-journée pour une visite approfondie."
+        },
+        {
+          "symbole": "🤫",
+          "titre": "Respect",
+          "texte": "C'est un lieu de mémoire important, adoptez une attitude respectueuse et silencieuse."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🚶‍♀️",
+      "titre": "Brest: Vieille Ville et Musées",
+      "legende": "Après l'intensité de la Forteresse, cette journée vous invite à explorer le côté plus paisible et culturel de Brest. Flânez dans ses rues piétonnes, découvrez ses musées et profitez de l'ambiance décontractée de cette ville frontalière. C'est l'occasion de voir la vie quotidienne biélorusse.",
+      "lieu": "Brest",
+      "activites": [
+        "🚶‍♀️ <strong>Promenade sur la rue Sovetskaya</strong>: Découvrez la principale rue piétonne de Brest, animée par ses boutiques, ses cafés et ses restaurants, et admirez le rituel quotidien de l'allumeur de lanternes.",
+        "🚂 <strong>Visite du Musée des Matériels Ferroviaires</strong>: Explorez une impressionnante collection de locomotives et de wagons historiques en plein air, un paradis pour les amateurs de trains et d'histoire industrielle.",
+        "🎨 <strong>Découverte du Musée d'Art de Brest</strong>: Admirez des œuvres d'artistes biélorusses et russes, offrant un aperçu de la scène artistique locale et régionale dans un cadre agréable."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "💡",
+          "titre": "Curiosité",
+          "texte": "Ne manquez pas l'allumeur de lanternes sur la rue Sovetskaya chaque soir au coucher du soleil, une tradition charmante."
+        },
+        {
+          "symbole": "🍽️",
+          "titre": "Repas",
+          "texte": "La rue Sovetskaya regorge de restaurants proposant des spécialités locales et internationales."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🌲",
+      "titre": "Excursion: Parc National de Belovezhskaya Pushcha",
+      "legende": "Aujourd'hui, une immersion totale dans la nature vous attend avec la visite du Parc National de Belovezhskaya Pushcha. Cette forêt primaire, classée à l'UNESCO, est l'une des dernières et des plus grandes forêts vierges d'Europe. C'est le refuge des bisons d'Europe et un lieu d'une beauté sauvage exceptionnelle.",
+      "lieu": "Parc National de Belovezhskaya Pushcha (depuis Brest)",
+      "activites": [
+        "🌲 <strong>Exploration du Parc National de Belovezhskaya Pushcha</strong>: Parcourez cette forêt ancienne, un écosystème unique abritant une biodiversité remarquable, et découvrez ses sentiers de randonnée et ses paysages préservés.",
+        "🦬 <strong>Observation des bisons d'Europe</strong>: Visitez l'enclos des bisons, où vous aurez l'opportunité d'admirer ces majestueux animaux dans un environnement semi-naturel, un symbole de la faune biélorusse."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "🚌",
+          "titre": "Accès",
+          "texte": "Le parc est accessible en bus depuis Brest ou via une excursion organisée. Prévoyez des chaussures confortables pour la marche."
+        },
+        {
+          "symbole": "🦌",
+          "titre": "Faune",
+          "texte": "Outre les bisons, le parc abrite des cerfs, des sangliers et de nombreuses espèces d'oiseaux. Soyez attentif!"
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🚌",
+      "titre": "Brest à Grodno: La Perle de l'Ouest",
+      "legende": "Quittez Brest pour vous diriger vers Grodno, une autre ville historique de l'ouest biélorusse, souvent surnommée la \"Perle de l'Ouest\". Le trajet vous fera traverser des paysages variés. Une fois arrivé, prenez le temps de vous installer et de commencer à explorer cette ville réputée pour son architecture et son charme.",
+      "lieu": "Grodno",
+      "activites": [
+        "🚌 <strong>Voyage en bus de Brest à Grodno</strong>: Profitez d'un trajet en bus pour découvrir de nouveaux paysages et vous immerger dans l'ambiance locale des transports biélorusses.",
+        "🚶‍♀️ <strong>Première découverte du centre historique de Grodno</strong>: Après l'installation, promenez-vous dans les rues pavées du centre, admirez les façades colorées et ressentez l'atmosphère unique de cette ville."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "⏱️",
+          "titre": "Durée du trajet",
+          "texte": "Le trajet en bus de Brest à Grodno dure environ 4 à 5 heures. Prévoyez de quoi vous occuper."
+        },
+        {
+          "symbole": "🗺️",
+          "titre": "Orientation",
+          "texte": "Grodno est une ville agréable à explorer à pied. Procurez-vous une carte locale à l'arrivée."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "⛪",
+      "titre": "Grodno: Architecture et Charme",
+      "legende": "Grodno se distingue par son riche patrimoine architectural, mélange d'influences polonaises, lituaniennes et biélorusses. Cette journée est dédiée à l'exploration de ses églises baroques, de ses châteaux et de ses rues pittoresques. C'est une ville qui invite à la flânerie et à la découverte de ses trésors cachés.",
+      "lieu": "Grodno",
+      "activites": [
+        "⛪ <strong>Visite de la Cathédrale Saint-François-Xavier</strong>: Admirez cette magnifique cathédrale baroque, l'une des plus belles de Biélorussie, avec son intérieur somptueux et son horloge astronomique unique.",
+        "🏰 <strong>Exploration des Châteaux Vieux et Neuf</strong>: Découvrez les vestiges du Vieux Château, résidence des grands-ducs de Lituanie, et le Nouveau Château, un palais baroque qui a joué un rôle clé dans l'histoire polono-lituanienne.",
+        "🚶‍♀️ <strong>Promenade sur la rue Sovetskaya et ses environs</strong>: Flânez dans la rue piétonne principale, bordée de bâtiments historiques, de cafés et de boutiques, et explorez les petites rues adjacentes pour découvrir le charme de Grodno."
+      ],
+      "illustration": "jour11.jpg",
+      "encarts": [
+        {
+          "symbole": "🏛️",
+          "titre": "Histoire",
+          "texte": "Grodno a été une ville royale importante de la République des Deux Nations (Pologne-Lituanie), d'où sa richesse architecturale."
+        },
+        {
+          "symbole": "☕",
+          "titre": "Pause",
+          "texte": "De nombreux cafés charmants vous invitent à faire une pause et à observer la vie locale."
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "🌳",
+      "titre": "Grodno: Rues Anciennes et Panoramas",
+      "legende": "Poursuivez votre exploration de Grodno en vous aventurant hors des sentiers battus. Découvrez des églises plus discrètes mais tout aussi fascinantes, profitez de vues panoramiques sur la ville et terminez la journée par une immersion dans la culture locale. Grodno est une ville qui se révèle à ceux qui prennent le temps de l'explorer.",
+      "lieu": "Grodno",
+      "activites": [
+        "⛪ <strong>Visite de l'Église de Kalozha (Saints Boris et Gleb)</strong>: Découvrez cette église unique du XIIe siècle, l'un des plus anciens édifices de Biélorussie, avec son architecture byzantine et son emplacement pittoresque sur les rives du fleuve Niémen.",
+        "🏞️ <strong>Vue panoramique depuis la colline du Château</strong>: Montez sur la colline où se dressent les châteaux pour profiter d'une vue imprenable sur la ville, le fleuve Niémen et les toits colorés de Grodno.",
+        "🛍️ <strong>Exploration du marché local</strong>: Imprégnez-vous de l'ambiance authentique du marché de Grodno, où vous pourrez trouver des produits frais, des souvenirs et interagir avec les habitants."
+      ],
+      "illustration": "jour12.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Accès",
+          "texte": "L'Église de Kalozha est un peu excentrée, mais accessible à pied ou en transport en commun."
+        },
+        {
+          "symbole": "🌅",
+          "titre": "Coucher de soleil",
+          "texte": "La vue depuis la colline du Château est particulièrement belle au coucher du soleil."
+        }
+      ]
+    },
+    {
+      "jour": 13,
+      "symbole": "🚆",
+      "titre": "Grodno à Vitebsk: Vers le Nord-Est Artistique",
+      "legende": "Aujourd'hui marque un long trajet vers le nord-est du pays, en direction de Vitebsk, la ville natale de Marc Chagall. Ce voyage en train vous permettra de traverser une grande partie de la Biélorussie, offrant des paysages changeants. Une fois arrivé, installez-vous et préparez-vous à découvrir une ville à l'âme artistique.",
+      "lieu": "Vitebsk",
+      "activites": [
+        "🚆 <strong>Long voyage en train de Grodno à Vitebsk</strong>: Préparez-vous à un trajet d'environ 6 à 7 heures. C'est une excellente occasion de lire, d'écrire ou simplement d'observer la campagne biélorusse.",
+        "🛏️ <strong>Installation à l'hôtel et dîner tranquille</strong>: Après ce long voyage, installez-vous confortablement et profitez d'un dîner relaxant dans un restaurant local près de votre hôtel."
+      ],
+      "illustration": "jour13.jpg",
+      "encarts": [
+        {
+          "symbole": "🍽️",
+          "titre": "Provisions",
+          "texte": "Prévoyez des collations et des boissons pour le trajet en train, même si des options sont souvent disponibles à bord."
+        },
+        {
+          "symbole": "🔋",
+          "titre": "Technologie",
+          "texte": "Chargez vos appareils électroniques avant le départ pour vous divertir pendant le voyage."
+        }
+      ]
+    },
+    {
+      "jour": 14,
+      "symbole": "🎨",
+      "titre": "Vitebsk: Sur les Traces de Chagall",
+      "legende": "Vitebsk est indissociable de Marc Chagall, l'un des plus grands peintres du XXe siècle. Cette journée est une immersion dans l'univers de l'artiste et dans l'histoire de sa ville natale. Découvrez les lieux qui ont inspiré ses œuvres et ressentez l'atmosphère artistique qui imprègne encore la ville.",
+      "lieu": "Vitebsk",
+      "activites": [
+        "🎨 <strong>Visite de la Maison-Musée Marc Chagall</strong>: Explorez la maison où l'artiste a passé son enfance et sa jeunesse, un lieu émouvant qui offre un aperçu intime de ses origines et de ses inspirations.",
+        "🖼️ <strong>Découverte du Centre d'Art Marc Chagall</strong>: Admirez des reproductions de ses œuvres et des expositions temporaires dédiées à l'artiste et à l'art moderne, pour une compréhension plus approfondie de son héritage.",
+        "⛪ <strong>Exploration de l'Église de l'Annonciation</strong>: Visitez cette église orthodoxe reconstruite, un exemple de l'architecture ancienne de Vitebsk, qui a vu Chagall enfant et qui est un point de repère historique."
+      ],
+      "illustration": "jour14.jpg",
+      "encarts": [
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Itinéraire Chagall",
+          "texte": "Suivez un itinéraire à pied pour découvrir les lieux de Vitebsk qui ont marqué la vie et l'œuvre de Chagall."
+        },
+        {
+          "symbole": "📖",
+          "titre": "Lecture",
+          "texte": "Relisez quelques passages de l'autobiographie de Chagall, \"Ma Vie\", avant votre visite pour une immersion plus profonde."
+        }
+      ]
+    },
+    {
+      "jour": 15,
+      "symbole": "🏞️",
+      "titre": "Vitebsk: Art, Églises et Ambiance",
+      "legende": "Au-delà de Chagall, Vitebsk offre d'autres trésors. Cette journée vous invite à explorer ses églises historiques, à profiter de ses parcs et à vous imprégner de son ambiance unique. C'est une ville qui allie histoire, art et nature, offrant une expérience riche et variée.",
+      "lieu": "Vitebsk",
+      "activites": [
+        "⛪ <strong>Visite de la Cathédrale de l'Assomption</strong>: Admirez cette imposante cathédrale orthodoxe, reconstruite dans le style baroque, qui domine la ville et offre une vue magnifique sur la Dvina.",
+        "🌳 <strong>Promenade le long de la Dvina</strong>: Flânez sur les rives de la rivière Dvina, profitez des parcs et des espaces verts, et observez la vie locale le long de ce cours d'eau historique.",
+        "🎭 <strong>Découverte du Théâtre National Académique Yakub Kolas</strong>: Admirez l'architecture de ce théâtre emblématique et, si le temps le permet, assistez à une représentation pour une immersion dans la culture théâtrale biélorusse."
+      ],
+      "illustration": "jour15.jpg",
+      "encarts": [
+        {
+          "symbole": "📸",
+          "titre": "Point de vue",
+          "texte": "La colline de la Cathédrale de l'Assomption offre l'un des meilleurs panoramas sur Vitebsk."
+        },
+        {
+          "symbole": "🛍️",
+          "titre": "Souvenirs",
+          "texte": "Recherchez des souvenirs artisanaux locaux, notamment des objets inspirés par Chagall."
+        }
+      ]
+    },
+    {
+      "jour": 16,
+      "symbole": "🚆",
+      "titre": "Vitebsk à Minsk: Retour à la Capitale",
+      "legende": "Après avoir exploré les charmes de Vitebsk, il est temps de retourner à Minsk pour votre dernière soirée en Biélorussie. Le trajet en train vous permettra de vous remémorer les moments forts de votre voyage. Une fois de retour dans la capitale, profitez d'un dernier dîner et d'une balade nocturne.",
+      "lieu": "Minsk",
+      "activites": [
+        "🚆 <strong>Voyage en train de Vitebsk à Minsk</strong>: Profitez de ce trajet d'environ 3 à 4 heures pour vous détendre et repenser à toutes les découvertes faites au cours de votre périple biélorusse.",
+        "🍽️ <strong>Dîner d'adieu dans un restaurant traditionnel</strong>: Savourez un dernier repas biélorusse, peut-être dans un restaurant proposant des spécialités locales comme le \"machanka\" ou le \"kolduny\".",
+        "🌃 <strong>Balade nocturne sur la Place de l'Indépendance</strong>: Admirez les illuminations de la Place de l'Indépendance et des bâtiments environnants, offrant une perspective différente de la capitale la nuit."
+      ],
+      "illustration": "jour16.jpg",
+      "encarts": [
+        {
+          "symbole": "🎁",
+          "titre": "Derniers achats",
+          "texte": "Profitez de cette dernière soirée à Minsk pour acheter les derniers souvenirs ou cadeaux."
+        },
+        {
+          "symbole": "🚶‍♀️",
+          "titre": "Sécurité",
+          "texte": "Minsk est une ville sûre, même la nuit, mais restez vigilant comme dans toute grande ville."
+        }
+      ]
+    },
+    {
+      "jour": 17,
+      "symbole": "🛫",
+      "titre": "Départ de Minsk",
+      "legende": "C'est le dernier jour de votre aventure biélorusse. Après un petit-déjeuner tranquille, il sera temps de vous diriger vers l'aéroport pour votre vol de retour. Emportez avec vous les souvenirs de cette terre d'histoire, de culture et de paysages surprenants, une destination qui ne laisse personne indifférent.",
+      "lieu": "Minsk",
+      "activites": [
+        "🍽️ <strong>Petit-déjeuner à l'hôtel</strong>: Profitez d'un dernier petit-déjeuner biélorusse avant de préparer votre départ.",
+        "🛬 <strong>Transfert à l'aéroport international de Minsk (MSQ)</strong>: Organisez votre transfert vers l'aéroport en fonction de l'heure de votre vol.",
+        "🛫 <strong>Vol de retour</strong>: Embarquez pour votre vol de retour, la tête pleine de souvenirs de la Biélorussie."
+      ],
+      "illustration": "jour17.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Heure de départ",
+          "texte": "Prévoyez suffisamment de temps pour le transfert à l'aéroport et les formalités d'enregistrement."
+        },
+        {
+          "symbole": "✈️",
+          "titre": "Bagages",
+          "texte": "Vérifiez les restrictions de bagages de votre compagnie aérienne avant de partir pour l'aéroport."
+        }
+      ]
+    }
+  ],
+  "detail_budget": [
+    {
+      "titre": "Budget vol:",
+      "legende": "1800€/pers (vol aller-retour en classe économique depuis le Canada)",
+      "symbole": "🛬"
+    },
+    {
+      "titre": "Budget transports:",
+      "legende": "425€/pers (trains interurbains, bus, métro et taxis locaux)",
+      "symbole": "🚆"
+    },
+    {
+      "titre": "Budget repas:",
+      "legende": "595€/pers (environ 35€/jour pour des repas de qualité moyenne)",
+      "symbole": "🥗"
+    },
+    {
+      "titre": "Budget logement:",
+      "legende": "960€/pers (16 nuits en hôtels 3 étoiles, environ 60€/nuit)",
+      "symbole": "🛏️"
+    },
+    {
+      "titre": "Budget activités:",
+      "legende": "220€/pers (entrées musées, châteaux, parcs et une soirée spectacle)",
+      "symbole": "🎭"
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de mai à juin et de septembre à octobre.",
+      "symbole": "🍁"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "La Biélorussie compte environ 9,3 millions d'habitants. La population est majoritairement biélorusse et russe.",
+      "symbole": "👥"
+    },
+    {
+      "titre": "Le pays est souvent appelé \"le poumon de l'Europe\" en raison de ses vastes forêts et de ses nombreux lacs. C'est un pays de plaines, avec une riche histoire et une forte influence slave et soviétique.",
+      "symbole": "🌳"
+    },
+    {
+      "titre": "Fait insolite: La Biélorussie abrite la plus grande population de bisons d'Europe (zubr) dans le Parc National de Belovezhskaya Pushcha. C'est aussi le seul pays d'Europe où l'on trouve encore des traces significatives de l'architecture stalinienne dans ses grandes villes.",
+      "symbole": "🦬"
+    },
+    {
+      "titre": "Les langues officielles sont le biélorusse et le russe. Le russe est la langue la plus couramment utilisée dans les grandes villes.",
+      "symbole": "🗣️"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Informations touristiques générales sur la Biélorussie",
+      "titre": "Belarus.travel",
+      "url": "https://belarus.travel/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Horaires et réservations des trains en Biélorussie",
+      "titre": "Chemins de fer biélorusses",
+      "url": "https://www.rw.by/en/",
+      "symbole": "🚆"
+    },
+    {
+      "legende": "Prévisions météorologiques détaillées pour la Biélorussie",
+      "titre": "AccuWeather Biélorussie",
+      "url": "https://www.accuweather.com/en/by/belarus-weather",
+      "symbole": "🌤️"
+    }
+  ]
+}
