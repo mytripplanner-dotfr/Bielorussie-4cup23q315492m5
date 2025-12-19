@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Écho de l'Est: Aventure Biélorusse </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      template: {
+                          sable: '#FFEDD5', 
+                          ocre: '#F97316',   // Orange Vibrant (Brand Accent)
+                          roche: '#0F172A',  // Bleu Nuit (Brand Dark)
+                          ciel: '#0D9488',   // Vert Lagon (Brand Primary)
+                          bg: '#FFF7ED'      // C'est un blanc cassé chaud, parfait pour la lecture et le contraste.
+                      }
+                  },
+                  fontFamily: {
+                      sans: ['"Plus Jakarta Sans"', 'sans-serif'], // Nouvelle police corps
+                      serif: ['"Outfit"', 'sans-serif'],           // Nouvelle police titres
+                  }
+              }
+          }
+      }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* 2. FORÇAGE DES GRAISSES (Comme sur la Landing Page) */
+        .font-sans { font-weight: 600 !important; }
+        .font-serif { font-weight: 800 !important; }
+
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #F97316; /* ocre */
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+    
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">MyTrip<span class="text-template-ocre">Planner</span></a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée à Minsk et Premières Impressions</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Minsk: Cœur Historique et Moderne</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Minsk: Art, Culture et Mémoire</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Minsk: Détente et Nature Urbaine</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Excursion: Châteaux de Mir et Nesvizh</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Minsk à Brest: Voyage vers l'Ouest</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 Brest: Forteresse et Histoire</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Brest: Vieille Ville et Musées</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Excursion: Parc National de Belovezhskaya Pushcha</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Brest à Grodno: La Perle de l'Ouest</a>
+            
+                <a href="#jour-11" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J11 Grodno: Architecture et Charme</a>
+            
+                <a href="#jour-12" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J12 Grodno: Rues Anciennes et Panoramas</a>
+            
+                <a href="#jour-13" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J13 Grodno à Vitebsk: Vers le Nord-Est Artistique</a>
+            
+                <a href="#jour-14" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J14 Vitebsk: Sur les Traces de Chagall</a>
+            
+                <a href="#jour-15" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J15 Vitebsk: Art, Églises et Ambiance</a>
+            
+                <a href="#jour-16" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J16 Vitebsk à Minsk: Retour à la Capitale</a>
+            
+                <a href="#jour-17" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J17 Départ de Minsk</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[60vh] flex items-center justify-center bg-cover bg-center"
+            style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/header.png" || 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021'}');">
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.2em] mb-4 uppercase text-xs font-bold">Feuille de Route</p>
+            <h1 class="font-serif text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">BIELORUSSIE</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-medium max-w-2xl mx-auto leading-relaxed">L'Écho de l'Est: Aventure Biélorusse</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30 shadow-sm">🗓️ 17 jours</span>
+                <span class="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30 shadow-sm">💰 4000€</span>
+                <span class="bg-white/20 backdrop-blur-md px-5 py-2 rounded-full border border-white/30 shadow-sm">🛬 environ 20h avec 2 escales depuis Regina (YQR), Canada</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-16 relative">
+        <div class="text-center mb-16">
+            <h2 class="text-template-ocre font-bold tracking-normal text-4xl mt-2 uppercase font-serif">Votre Roadtrip</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée à Minsk et Premières Impressions</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage, la capitale biélorusse vous accueille. Prenez le temps de vous installer et de faire une première immersion douce dans l'ambiance locale. Une balade tranquille vous permettra de vous familiariser avec les environs de votre hôtel et de sentir le pouls de la ville.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🛬 <strong>Arrivée à Minsk et transfert à l'hôtel</strong>: Après l'atterrissage à l'aéroport international de Minsk (MSQ), un transfert vers votre hôtel 3 étoiles vous attend pour une installation confortable.</li><li>🚶‍♂️ <strong>Balade légère dans le quartier de l'hôtel</strong>: Profitez de l'après-midi pour une promenade relaxante, découvrez les rues avoisinantes, repérez les commodités et imprégnez-vous de l'atmosphère locale sans précipitation.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ Visa</p>
+                                <p class="text-gray-700">Les citoyens canadiens ont besoin d'un visa pour la Biélorussie. Assurez-vous de l'obtenir avant votre départ.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💱 Monnaie</p>
+                                <p class="text-gray-700">La monnaie locale est le rouble biélorusse (BYN). Prévoyez de changer de l'argent ou d'utiliser des distributeurs automatiques.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Minsk: Cœur Historique et Moderne</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Plongez au cœur de Minsk, une ville qui a su se reconstruire avec panache après la Seconde Guerre mondiale. Explorez son centre historique restauré, admirez l'architecture stalinienne imposante et ressentez le mélange unique d'histoire et de modernité qui caractérise la capitale biélorusse.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>⛪ <strong>Visite de la Vieille Ville (Troitskoye Predmestye)</strong>: Flânez dans le quartier pittoresque de la Trinité, avec ses maisons colorées du XIXe siècle, ses cafés charmants et ses galeries d'art, offrant un aperçu de l'ancienne Minsk.</li><li>🚶‍♀️ <strong>Découverte de l'Avenue de l'Indépendance</strong>: Parcourez cette artère majestueuse, emblématique de l'architecture stalinienne, bordée de bâtiments imposants et de places grandioses, témoignant de l'histoire soviétique de la ville.</li><li>⛪ <strong>Exploration de la Cathédrale Sainte-Marie</strong>: Admirez cette magnifique cathédrale catholique, un joyau architectural qui se dresse fièrement au cœur de la ville, offrant un contraste saisissant avec l'architecture environnante.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶 À pied</p>
+                                <p class="text-gray-700">Le centre de Minsk est très agréable à explorer à pied. Prévoyez de bonnes chaussures de marche.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📸 Photographie</p>
+                                <p class="text-gray-700">L'architecture stalinienne offre des perspectives uniques pour la photographie urbaine.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Minsk: Art, Culture et Mémoire</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Cette journée est dédiée à l'exploration de la richesse culturelle et mémorielle de Minsk. Des collections d'art nationales aux monuments commémoratifs poignants, la ville révèle ses multiples facettes. C'est une occasion de comprendre l'âme biélorusse à travers ses expressions artistiques et son histoire.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🖼️ <strong>Visite du Musée National d'Art de Biélorussie</strong>: Découvrez la plus grande collection d'art biélorusse, russe et européen, offrant un panorama complet de l'histoire artistique de la région.</li><li>🕊️ <strong>Mémorial de l'Île des Larmes</strong>: Rendez hommage aux soldats biélorusses tombés en Afghanistan sur cette île artificielle émouvante, un lieu de recueillement et de souvenir au milieu de la rivière Svislach.</li><li>🎭 <strong>Soirée à l'Opéra et Ballet National de Biélorussie</strong>: Si le programme le permet, assistez à une représentation dans ce magnifique théâtre, un haut lieu de la culture biélorusse, pour une expérience artistique mémorable.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎟️ Billets</p>
+                                <p class="text-gray-700">Réservez vos billets pour l'opéra à l'avance, surtout si vous voyagez pendant la haute saison.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗣️ Langue</p>
+                                <p class="text-gray-700">Le russe est la langue la plus parlée. Quelques notions de base peuvent être utiles, mais de nombreux jeunes parlent anglais.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Minsk: Détente et Nature Urbaine</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après les explorations culturelles, cette journée offre un moment de détente et de connexion avec la nature urbaine de Minsk. Profitez des vastes parcs verdoyants et des rives de la Svislach pour une pause ressourçante. C'est l'occasion de voir une autre facette de la vie quotidienne des habitants.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🌳 <strong>Promenade au Parc Gorky</strong>: Détendez-vous dans ce grand parc urbain, idéal pour une balade, une pause café ou même un tour de grande roue pour une vue panoramique sur la ville.</li><li>🛶 <strong>Balade le long de la rivière Svislach</strong>: Longez les berges aménagées de la rivière, un lieu prisé des habitants pour la marche, le vélo ou simplement pour profiter de l'air frais et des paysages verdoyants.</li><li>🛍️ <strong>Exploration du Komarovsky Market</strong>: Imprégnez-vous de l'ambiance locale dans ce marché couvert animé, où vous trouverez des produits frais, des spécialités biélorusses et une véritable immersion dans la vie quotidienne.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍎 Gastronomie</p>
+                                <p class="text-gray-700">Au marché Komarovsky, goûtez aux fruits de saison et aux produits locaux comme le "draniki" (galettes de pommes de terre).</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Météo</p>
+                                <p class="text-gray-700">En été, les parcs sont parfaits pour échapper à la chaleur. En automne, les couleurs sont magnifiques.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Excursion: Châteaux de Mir et Nesvizh</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Évadez-vous de la capitale pour une journée riche en histoire et en architecture. Découvrez deux des plus beaux châteaux de Biélorussie, classés au patrimoine mondial de l'UNESCO. Ces forteresses majestueuses racontent des siècles d'histoire et offrent un aperçu fascinant de la noblesse biélorusse.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🏰 <strong>Visite du Château de Mir</strong>: Explorez ce château gothique du XVIe siècle, un exemple remarquable de l'architecture défensive, avec ses tours imposantes et son histoire mouvementée. Le site est classé à l'UNESCO.</li><li>👑 <strong>Découverte du Château de Nesvizh</strong>: Plongez dans l'élégance de cette ancienne résidence de la famille Radziwill, une magnifique forteresse-palais de style baroque, entourée de jardins paysagers et également classée à l'UNESCO.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚌 Transport</p>
+                                <p class="text-gray-700">Il est recommandé de louer une voiture avec chauffeur ou de participer à une excursion organisée pour visiter ces deux sites en une journée.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏳ Durée</p>
+                                <p class="text-gray-700">Prévoyez une journée complète pour cette excursion, les trajets entre les sites et depuis Minsk prennent du temps.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Minsk à Brest: Voyage vers l'Ouest</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, vous quittez la capitale pour vous diriger vers l'ouest du pays, à Brest. Ce voyage en train vous offre l'opportunité d'admirer les paysages biélorusses défiler. Une fois arrivé, prenez le temps de vous installer et de faire une première découverte de cette ville frontalière chargée d'histoire.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🚆 <strong>Voyage en train de Minsk à Brest</strong>: Profitez d'un trajet confortable en train à travers la campagne biélorusse, une expérience authentique pour observer la vie locale et les paysages.</li><li>🚶‍♀️ <strong>Première balade dans le centre de Brest</strong>: Après l'installation à votre hôtel, explorez les rues principales de Brest, imprégnez-vous de son atmosphère et repérez les lieux d'intérêt pour les jours suivants.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎫 Billets de train</p>
+                                <p class="text-gray-700">Achetez vos billets de train à l'avance, surtout pour les trajets interurbains populaires.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏱️ Durée du trajet</p>
+                                <p class="text-gray-700">Le trajet en train de Minsk à Brest dure environ 3 à 4 heures, selon le type de train.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Brest: Forteresse et Histoire</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Brest est une ville dont l'histoire est profondément marquée par les conflits et la résilience. Cette journée est consacrée à la découverte de sa célèbre forteresse, un symbole poignant de la résistance soviétique pendant la Seconde Guerre mondiale. C'est une expérience émouvante et éducative.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🏰 <strong>Visite de la Forteresse de Brest</strong>: Explorez ce complexe mémorial colossal, un site historique majeur qui témoigne de la défense héroïque de la ville en 1941, avec ses monuments impressionnants et ses musées.</li><li>🕯️ <strong>Mémorial "Courage" et Musée de la Défense</strong>: Découvrez le cœur du mémorial, avec sa flamme éternelle et ses expositions détaillées sur les événements tragiques et la bravoure des défenseurs de la forteresse.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♂️ Prévoir du temps</p>
+                                <p class="text-gray-700">Le site de la Forteresse de Brest est très vaste. Prévoyez au moins une demi-journée pour une visite approfondie.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤫 Respect</p>
+                                <p class="text-gray-700">C'est un lieu de mémoire important, adoptez une attitude respectueuse et silencieuse.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Brest: Vieille Ville et Musées</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après l'intensité de la Forteresse, cette journée vous invite à explorer le côté plus paisible et culturel de Brest. Flânez dans ses rues piétonnes, découvrez ses musées et profitez de l'ambiance décontractée de cette ville frontalière. C'est l'occasion de voir la vie quotidienne biélorusse.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🚶‍♀️ <strong>Promenade sur la rue Sovetskaya</strong>: Découvrez la principale rue piétonne de Brest, animée par ses boutiques, ses cafés et ses restaurants, et admirez le rituel quotidien de l'allumeur de lanternes.</li><li>🚂 <strong>Visite du Musée des Matériels Ferroviaires</strong>: Explorez une impressionnante collection de locomotives et de wagons historiques en plein air, un paradis pour les amateurs de trains et d'histoire industrielle.</li><li>🎨 <strong>Découverte du Musée d'Art de Brest</strong>: Admirez des œuvres d'artistes biélorusses et russes, offrant un aperçu de la scène artistique locale et régionale dans un cadre agréable.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💡 Curiosité</p>
+                                <p class="text-gray-700">Ne manquez pas l'allumeur de lanternes sur la rue Sovetskaya chaque soir au coucher du soleil, une tradition charmante.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Repas</p>
+                                <p class="text-gray-700">La rue Sovetskaya regorge de restaurants proposant des spécialités locales et internationales.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Excursion: Parc National de Belovezhskaya Pushcha</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, une immersion totale dans la nature vous attend avec la visite du Parc National de Belovezhskaya Pushcha. Cette forêt primaire, classée à l'UNESCO, est l'une des dernières et des plus grandes forêts vierges d'Europe. C'est le refuge des bisons d'Europe et un lieu d'une beauté sauvage exceptionnelle.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🌲 <strong>Exploration du Parc National de Belovezhskaya Pushcha</strong>: Parcourez cette forêt ancienne, un écosystème unique abritant une biodiversité remarquable, et découvrez ses sentiers de randonnée et ses paysages préservés.</li><li>🦬 <strong>Observation des bisons d'Europe</strong>: Visitez l'enclos des bisons, où vous aurez l'opportunité d'admirer ces majestueux animaux dans un environnement semi-naturel, un symbole de la faune biélorusse.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚌 Accès</p>
+                                <p class="text-gray-700">Le parc est accessible en bus depuis Brest ou via une excursion organisée. Prévoyez des chaussures confortables pour la marche.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🦌 Faune</p>
+                                <p class="text-gray-700">Outre les bisons, le parc abrite des cerfs, des sangliers et de nombreuses espèces d'oiseaux. Soyez attentif!</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Brest à Grodno: La Perle de l'Ouest</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Quittez Brest pour vous diriger vers Grodno, une autre ville historique de l'ouest biélorusse, souvent surnommée la "Perle de l'Ouest". Le trajet vous fera traverser des paysages variés. Une fois arrivé, prenez le temps de vous installer et de commencer à explorer cette ville réputée pour son architecture et son charme.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🚌 <strong>Voyage en bus de Brest à Grodno</strong>: Profitez d'un trajet en bus pour découvrir de nouveaux paysages et vous immerger dans l'ambiance locale des transports biélorusses.</li><li>🚶‍♀️ <strong>Première découverte du centre historique de Grodno</strong>: Après l'installation, promenez-vous dans les rues pavées du centre, admirez les façades colorées et ressentez l'atmosphère unique de cette ville.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏱️ Durée du trajet</p>
+                                <p class="text-gray-700">Le trajet en bus de Brest à Grodno dure environ 4 à 5 heures. Prévoyez de quoi vous occuper.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🗺️ Orientation</p>
+                                <p class="text-gray-700">Grodno est une ville agréable à explorer à pied. Procurez-vous une carte locale à l'arrivée.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-11" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 11</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Grodno: Architecture et Charme</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Grodno se distingue par son riche patrimoine architectural, mélange d'influences polonaises, lituaniennes et biélorusses. Cette journée est dédiée à l'exploration de ses églises baroques, de ses châteaux et de ses rues pittoresques. C'est une ville qui invite à la flânerie et à la découverte de ses trésors cachés.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>⛪ <strong>Visite de la Cathédrale Saint-François-Xavier</strong>: Admirez cette magnifique cathédrale baroque, l'une des plus belles de Biélorussie, avec son intérieur somptueux et son horloge astronomique unique.</li><li>🏰 <strong>Exploration des Châteaux Vieux et Neuf</strong>: Découvrez les vestiges du Vieux Château, résidence des grands-ducs de Lituanie, et le Nouveau Château, un palais baroque qui a joué un rôle clé dans l'histoire polono-lituanienne.</li><li>🚶‍♀️ <strong>Promenade sur la rue Sovetskaya et ses environs</strong>: Flânez dans la rue piétonne principale, bordée de bâtiments historiques, de cafés et de boutiques, et explorez les petites rues adjacentes pour découvrir le charme de Grodno.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour11.jpg" class="w-full h-64 object-cover" alt="Jour 11">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🏛️ Histoire</p>
+                                <p class="text-gray-700">Grodno a été une ville royale importante de la République des Deux Nations (Pologne-Lituanie), d'où sa richesse architecturale.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☕ Pause</p>
+                                <p class="text-gray-700">De nombreux cafés charmants vous invitent à faire une pause et à observer la vie locale.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-12" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 12</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Grodno: Rues Anciennes et Panoramas</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Poursuivez votre exploration de Grodno en vous aventurant hors des sentiers battus. Découvrez des églises plus discrètes mais tout aussi fascinantes, profitez de vues panoramiques sur la ville et terminez la journée par une immersion dans la culture locale. Grodno est une ville qui se révèle à ceux qui prennent le temps de l'explorer.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>⛪ <strong>Visite de l'Église de Kalozha (Saints Boris et Gleb)</strong>: Découvrez cette église unique du XIIe siècle, l'un des plus anciens édifices de Biélorussie, avec son architecture byzantine et son emplacement pittoresque sur les rives du fleuve Niémen.</li><li>🏞️ <strong>Vue panoramique depuis la colline du Château</strong>: Montez sur la colline où se dressent les châteaux pour profiter d'une vue imprenable sur la ville, le fleuve Niémen et les toits colorés de Grodno.</li><li>🛍️ <strong>Exploration du marché local</strong>: Imprégnez-vous de l'ambiance authentique du marché de Grodno, où vous pourrez trouver des produits frais, des souvenirs et interagir avec les habitants.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour12.jpg" class="w-full h-64 object-cover" alt="Jour 12">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ Accès</p>
+                                <p class="text-gray-700">L'Église de Kalozha est un peu excentrée, mais accessible à pied ou en transport en commun.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌅 Coucher de soleil</p>
+                                <p class="text-gray-700">La vue depuis la colline du Château est particulièrement belle au coucher du soleil.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-13" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 13</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Grodno à Vitebsk: Vers le Nord-Est Artistique</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui marque un long trajet vers le nord-est du pays, en direction de Vitebsk, la ville natale de Marc Chagall. Ce voyage en train vous permettra de traverser une grande partie de la Biélorussie, offrant des paysages changeants. Une fois arrivé, installez-vous et préparez-vous à découvrir une ville à l'âme artistique.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🚆 <strong>Long voyage en train de Grodno à Vitebsk</strong>: Préparez-vous à un trajet d'environ 6 à 7 heures. C'est une excellente occasion de lire, d'écrire ou simplement d'observer la campagne biélorusse.</li><li>🛏️ <strong>Installation à l'hôtel et dîner tranquille</strong>: Après ce long voyage, installez-vous confortablement et profitez d'un dîner relaxant dans un restaurant local près de votre hôtel.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour13.jpg" class="w-full h-64 object-cover" alt="Jour 13">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍽️ Provisions</p>
+                                <p class="text-gray-700">Prévoyez des collations et des boissons pour le trajet en train, même si des options sont souvent disponibles à bord.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🔋 Technologie</p>
+                                <p class="text-gray-700">Chargez vos appareils électroniques avant le départ pour vous divertir pendant le voyage.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-14" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 14</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vitebsk: Sur les Traces de Chagall</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Vitebsk est indissociable de Marc Chagall, l'un des plus grands peintres du XXe siècle. Cette journée est une immersion dans l'univers de l'artiste et dans l'histoire de sa ville natale. Découvrez les lieux qui ont inspiré ses œuvres et ressentez l'atmosphère artistique qui imprègne encore la ville.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🎨 <strong>Visite de la Maison-Musée Marc Chagall</strong>: Explorez la maison où l'artiste a passé son enfance et sa jeunesse, un lieu émouvant qui offre un aperçu intime de ses origines et de ses inspirations.</li><li>🖼️ <strong>Découverte du Centre d'Art Marc Chagall</strong>: Admirez des reproductions de ses œuvres et des expositions temporaires dédiées à l'artiste et à l'art moderne, pour une compréhension plus approfondie de son héritage.</li><li>⛪ <strong>Exploration de l'Église de l'Annonciation</strong>: Visitez cette église orthodoxe reconstruite, un exemple de l'architecture ancienne de Vitebsk, qui a vu Chagall enfant et qui est un point de repère historique.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour14.jpg" class="w-full h-64 object-cover" alt="Jour 14">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ Itinéraire Chagall</p>
+                                <p class="text-gray-700">Suivez un itinéraire à pied pour découvrir les lieux de Vitebsk qui ont marqué la vie et l'œuvre de Chagall.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📖 Lecture</p>
+                                <p class="text-gray-700">Relisez quelques passages de l'autobiographie de Chagall, "Ma Vie", avant votre visite pour une immersion plus profonde.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-15" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 15</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vitebsk: Art, Églises et Ambiance</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Au-delà de Chagall, Vitebsk offre d'autres trésors. Cette journée vous invite à explorer ses églises historiques, à profiter de ses parcs et à vous imprégner de son ambiance unique. C'est une ville qui allie histoire, art et nature, offrant une expérience riche et variée.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>⛪ <strong>Visite de la Cathédrale de l'Assomption</strong>: Admirez cette imposante cathédrale orthodoxe, reconstruite dans le style baroque, qui domine la ville et offre une vue magnifique sur la Dvina.</li><li>🌳 <strong>Promenade le long de la Dvina</strong>: Flânez sur les rives de la rivière Dvina, profitez des parcs et des espaces verts, et observez la vie locale le long de ce cours d'eau historique.</li><li>🎭 <strong>Découverte du Théâtre National Académique Yakub Kolas</strong>: Admirez l'architecture de ce théâtre emblématique et, si le temps le permet, assistez à une représentation pour une immersion dans la culture théâtrale biélorusse.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour15.jpg" class="w-full h-64 object-cover" alt="Jour 15">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">📸 Point de vue</p>
+                                <p class="text-gray-700">La colline de la Cathédrale de l'Assomption offre l'un des meilleurs panoramas sur Vitebsk.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛍️ Souvenirs</p>
+                                <p class="text-gray-700">Recherchez des souvenirs artisanaux locaux, notamment des objets inspirés par Chagall.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-16" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 16</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vitebsk à Minsk: Retour à la Capitale</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après avoir exploré les charmes de Vitebsk, il est temps de retourner à Minsk pour votre dernière soirée en Biélorussie. Le trajet en train vous permettra de vous remémorer les moments forts de votre voyage. Une fois de retour dans la capitale, profitez d'un dernier dîner et d'une balade nocturne.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🚆 <strong>Voyage en train de Vitebsk à Minsk</strong>: Profitez de ce trajet d'environ 3 à 4 heures pour vous détendre et repenser à toutes les découvertes faites au cours de votre périple biélorusse.</li><li>🍽️ <strong>Dîner d'adieu dans un restaurant traditionnel</strong>: Savourez un dernier repas biélorusse, peut-être dans un restaurant proposant des spécialités locales comme le "machanka" ou le "kolduny".</li><li>🌃 <strong>Balade nocturne sur la Place de l'Indépendance</strong>: Admirez les illuminations de la Place de l'Indépendance et des bâtiments environnants, offrant une perspective différente de la capitale la nuit.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour16.jpg" class="w-full h-64 object-cover" alt="Jour 16">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎁 Derniers achats</p>
+                                <p class="text-gray-700">Profitez de cette dernière soirée à Minsk pour acheter les derniers souvenirs ou cadeaux.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🚶‍♀️ Sécurité</p>
+                                <p class="text-gray-700">Minsk est une ville sûre, même la nuit, mais restez vigilant comme dans toute grande ville.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-17" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2 font-bold">Jour 17</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Départ de Minsk</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">C'est le dernier jour de votre aventure biélorusse. Après un petit-déjeuner tranquille, il sera temps de vous diriger vers l'aéroport pour votre vol de retour. Emportez avec vous les souvenirs de cette terre d'histoire, de culture et de paysages surprenants, une destination qui ne laisse personne indifférent.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left font-medium">
+                            <li>🍽️ <strong>Petit-déjeuner à l'hôtel</strong>: Profitez d'un dernier petit-déjeuner biélorusse avant de préparer votre départ.</li><li>🛬 <strong>Transfert à l'aéroport international de Minsk (MSQ)</strong>: Organisez votre transfert vers l'aéroport en fonction de l'heure de votre vol.</li><li>🛫 <strong>Vol de retour</strong>: Embarquez pour votre vol de retour, la tête pleine de souvenirs de la Biélorussie.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/mytripplanner-dotfr/Bielorussie-4cup23q315492m5/main/jour17.jpg" class="w-full h-64 object-cover" alt="Jour 17">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Heure de départ</p>
+                                <p class="text-gray-700">Prévoyez suffisamment de temps pour le transfert à l'aéroport et les formalités d'enregistrement.</p>
+                            </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">✈️ Bagages</p>
+                                <p class="text-gray-700">Vérifiez les restrictions de bagages de votre compagnie aérienne avant de partir pour l'aéroport.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+        </div>
+    </section>
+
+    <section id="pratique" class="bg-white border-t border-gray-200 pt-12 pb-12 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>💴</span> Budget
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget vol: </strong>1800€/pers (vol aller-retour en classe économique depuis le Canada)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget transports: </strong>425€/pers (trains interurbains, bus, métro et taxis locaux)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget repas: </strong>595€/pers (environ 35€/jour pour des repas de qualité moyenne)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget logement: </strong>960€/pers (16 nuits en hôtels 3 étoiles, environ 60€/nuit)</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2"><strong>Budget activités: </strong>220€/pers (entrées musées, châteaux, parcs et une soirée spectacle)</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">Les périodes idéales pour ce séjour sont les mois de mai à juin et de septembre à octobre.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>📃</span> Infos pratiques
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">👥 La Biélorussie compte environ 9,3 millions d'habitants. La population est majoritairement biélorusse et russe.</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">🌳 Le pays est souvent appelé "le poumon de l'Europe" en raison de ses vastes forêts et de ses nombreux lacs. C'est un pays de plaines, avec une riche histoire et une forte influence slave et soviétique.</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">🦬 Fait insolite: La Biélorussie abrite la plus grande population de bisons d'Europe (zubr) dans le Parc National de Belovezhskaya Pushcha. C'est aussi le seul pays d'Europe où l'on trouve encore des traces significatives de l'architecture stalinienne dans ses grandes villes.</p>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed mb-2">🗣️ Les langues officielles sont le biélorusse et le russe. Le russe est la langue la plus couramment utilisée dans les grandes villes.</p>
+                
+            </div>            
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2 font-bold">
+                    <span>🔗</span> Liens Utiles
+                </h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://mytripplanner-dotfr.github.io/Bielorussie-4cup23q315492m5/map.html" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>🗺️ Carte Interactive</strong></a></li>
+                    
+                        <li><a href="https://belarus.travel/" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>📘 Belarus.travel</strong></a></li>
+                    
+                        <li><a href="https://www.rw.by/en/" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>🚆 Chemins de fer biélorusses</strong></a></li>
+                    
+                        <li><a href="https://www.accuweather.com/en/by/belarus-weather" target="_blank" class="hover:text-template-ocre transition flex items-center gap-2"><strong>🌤️ AccuWeather Biélorussie</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-50 border-t border-slate-200 py-6">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="font-serif text-lg text-template-roche mb-2 font-bold">
+                MyTrip<span class="text-template-ocre">Planner</span>
+            </p>
+
+                <div class="flex justify-center gap-4 text-[10px] md:text-xs text-slate-500 mb-4 font-semibold">
+                    <a href="#" class="hover:text-brand-primary transition hover:underline">Mentions Légales</a>
+                    <a href="#" class="hover:text-brand-primary transition hover:underline">CGU</a>
+                    <a href="#" class="hover:text-brand-primary transition hover:underline">Confidentialité</a>
+                </div>
+
+            <p class="text-[10px] text-gray-400 mb-2">
+                &copy; 2025 MyTripPlanner. Tous droits réservés.
+            </p>
+
+            <div class="flex justify-center">
+                <p class="text-[10px] text-gray-400 uppercase tracking-widest px-2 py-0.5 border border-gray-200 rounded-full inline-block">
+                    🤖 Contenu généré par IA
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestion Scroll & Menu
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+        
+        // Active Link Highlighter
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -60% 0px' });
+
+        document.querySelectorAll('div[id^="jour-"], section#pratique').forEach(s => observer.observe(s));
+    </script>
+</body>
+</html>
